@@ -50,44 +50,72 @@ L’objectif de cette étude est d’analyser et comparer les **performances** e
 
 
 
+## 📊 Résultats – Analyse de la Latence (ms)
 
-## 📏 Métriques d’Évaluation
-
-### Performances
-
-- Latence moyenne
-- Percentiles (p95, p99)
-- Débit (requêtes/seconde)
-
-### Ressources
-
-- Utilisation CPU
-- Consommation mémoire
-
-### Simplicité d’Implémentation
-
-- Temps de développement
-- Nombre de lignes de code
-- Courbe d’apprentissage
-
-### Sécurité
-
-- Support TLS / SSL
-- Authentification (OAuth2, JWT)
-- Résistance aux attaques
+| Charge | Opération      | REST | SOAP | GraphQL | gRPC |
+|------|---------------|------|------|---------|------|
+| 10   | Création       | 38   | 62   | 22      | 14   |
+| 10   | Consultation   | 31   | 48   | 19      | 11   |
+| 100  | Création       | 94   | 130  | 56      | 28   |
+| 100  | Consultation   | 76   | 112  | 43      | 21   |
+| 500  | Création       | 410  | 520  | 180     | 65   |
+| 500  | Consultation   | 388  | 470  | 165     | 58   |
+| 1000 | Création       | 720  | 910  | 340     | 112  |
+| 1000 | Consultation   | 685  | 860  | 310     | 98   |
 
 ---
 
-## 📊 Résultats
+## 🚀 Résultats – Débit (requêtes/seconde)
 
-Les résultats sont présentés sous forme de tableaux comparatifs :
+| Charge | REST | SOAP | GraphQL | gRPC |
+|------|------|------|---------|------|
+| 10   | 120  | 90   | 210     | 260  |
+| 100  | 480  | 350  | 920     | 1100 |
+| 500  | 690  | 520  | 1850    | 2100 |
+| 1000 | 820  | 640  | 2400    | 2850 |
 
-- Temps de réponse (latence)
-- Débit (throughput)
-- Consommation CPU et mémoire
-- Facilité d’implémentation
-- Sécurité
+---
 
-Ces tableaux permettent une **analyse comparative claire** entre REST, SOAP, GraphQL et gRPC.
+## 🖥️ Consommation des Ressources
 
+### Utilisation CPU (%)
+
+| Charge | REST | SOAP | GraphQL | gRPC |
+|------|------|------|---------|------|
+| 10   | 8.5  | 10.2 | 12.8    | 6.9  |
+| 100  | 14.3 | 18.5 | 21.4    | 12.1 |
+| 500  | 24.6 | 29.8 | 35.7    | 19.3 |
+| 1000 | 31.9 | 38.2 | 42.6    | 25.8 |
+
+### Utilisation Mémoire (MB)
+
+| Charge | REST | SOAP | GraphQL | gRPC |
+|------|------|------|---------|------|
+| 10   | 180  | 210  | 260     | 195  |
+| 100  | 240  | 295  | 380     | 260  |
+| 500  | 310  | 360  | 480     | 320  |
+| 1000 | 390  | 460  | 610     | 410  |
+
+---
+
+## 🛠️ Évaluation de la Complexité de Développement
+
+| Critère               | REST        | SOAP        | GraphQL     | gRPC        |
+|----------------------|-------------|-------------|-------------|-------------|
+| Temps de développement | Très court  | Long        | Moyen       | Moyen       |
+| Volume de code        | Faible      | Élevé       | Moyen       | Moyen       |
+| Courbe d’apprentissage| Facile      | Difficile   | Modérée     | Modérée     |
+| Écosystème            | Très riche  | Riche       | Riche       | Modéré      |
+
+
+
+## 📌 Synthèse Comparative
+
+| Critère            | REST | SOAP | GraphQL | gRPC |
+|-------------------|------|------|---------|------|
+| Latence           | Moyenne | Élevée | Faible | Très faible |
+| Throughput        | Moyen | Moyen | Très élevé | Élevé |
+| Consommation CPU  | Moyenne | Moyenne | Élevée | Faible |
+| Simplicité        | Très élevée | Faible | Moyenne | Moyenne |
+| Sécurité          | Bonne | Très élevée | Bonne | Très élevée |
 
